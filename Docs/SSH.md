@@ -12,10 +12,10 @@ SSH fonctionne avec 3 modes :
 
 #### 1. Authentification RSA rhost (depreciée)
 Possible si le serveur à distance contient l'un de ces fichiers 
-	- /etc/hosts.equiv
-	- /etc/ssh/shosts.equiv
-	- /home/USR_NAME/.rhosts
-	- /home/USR_NAME/.shosts	
+- /etc/hosts.equiv
+- /etc/ssh/shosts.equiv
+- /home/USR_NAME/.rhosts
+- /home/USR_NAME/.shosts	
 Ces fichiers contiennent une entrée identifiant le client qui essaye de se connecter avec l'utilisateur en cours.
 
 #### 2. Authentification par la paire clés publique/privée :
