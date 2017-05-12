@@ -20,7 +20,7 @@ testApp
 ```cordova platform remove android```
 
 # Les meta tags
-Meta Viewport tag : 
+Meta Viewport tag :
 ```
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 ```
@@ -33,7 +33,7 @@ Meta Viewport tag :
 
 `cordova run android` = build + emulate
 
-`cordova build --realease android` : Permet de generer une release de notre app prete à etre envoyée sur le store. Mais avant cela, il faut signer notre apk avec la commande 
+`cordova build --realease android` : Permet de generer une release de notre app prete à etre envoyée sur le store. Mais avant cela, il faut signer notre apk avec la commande
 
 ```
 Pour generer notre clé privée
@@ -70,7 +70,7 @@ id="com.test.myApp" // identifiant unique de l'application
 <preference name="android-minSdkVersion" value="18" /> #Version minimale android
 <preference name="android-installLocation" value="auto" /> #Installation sur le tel ou un external storage
 
-// Definition des icones 
+// Definition des icones
 # Valeurs possibles : ldpi/mdpi/hdpi/xhdpi/xxhdpi/xxxhdpi
 <platfrom name="android">
   <icon src="path/drawable-ldpi-icon.png" qualifier="ldpi" />
@@ -80,7 +80,7 @@ id="com.test.myApp" // identifiant unique de l'application
 
 // Definition des splashscreens
 # idem que les icones mais en utilisant les tags splash au lieu de icon
-# Remarque: le splash tag peut definir aussi l'orientation de l'ecran 
+# Remarque: le splash tag peut definir aussi l'orientation de l'ecran
 <splash src="path/drawable-hdpi-splashscreen.png" qualifier="hdpi" />
 
 // Definition des ressources externes
@@ -94,3 +94,13 @@ id="com.test.myApp" // identifiant unique de l'application
 
 ```
 
+### Crosswalk
+
+```
+  cordova plugin add cordova-plugin-crosswalk-webview
+```
+Après lancement d'un build, on obtient :
+  - Deux Apk pour les architectures ARM et Intel based arch (x86)
+  - Chaque Apk à une taille de ~20mo
+
+Pour verifier que c'est bien crosswalk est bien utilisé dans l'application. Allez dabs `chrome://inspect` et dans la console executé la commande `navigator.userAgent`. Si crossWalk est dans la chaine affichée alors c'est OK.
