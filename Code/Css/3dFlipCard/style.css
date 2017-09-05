@@ -1,0 +1,44 @@
+li {
+  width: 200px;
+  height: 300px;
+  float: left;
+  margin: 20px;
+  list-style: none;
+  text-align:center;
+  line-height: 300px;
+  font-size: 120px;
+  font-family: monospace;
+  position: relative;
+  cursor: pointer;
+  perspective: 550px;
+}
+
+.container div {
+  position: absolute;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0px 0px 1px  rgba(0,0,0, 0.25);
+}
+
+.front {
+  z-index: 3;
+  background: linear-gradient(#ee1212, #991212);
+  color: rgba(230,52,52,1)
+}
+
+.back {
+  background: #eee;
+  transform: rotateY(180deg);
+  color: rgba(0,0,0,0.7)
+}
+
+li:hover .front {
+  transform: rotateY(-180deg);
+  z-index: 0;
+}
+
+li:hover .back {
+  transform: rotateY(0);
+}

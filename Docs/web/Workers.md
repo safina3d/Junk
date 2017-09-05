@@ -1,12 +1,12 @@
 # WebWorker
 
-```
+```javascript
 // Main script
 var worker = new Worker('worker.js');
 worker.postMessage('hello');
 ```
 
-```
+```javascript
 // Worker script
 this.addEventListener('message', function (e) {
     try {
@@ -18,8 +18,8 @@ this.addEventListener('message', function (e) {
 });
 ```
 
-```
-//Utiliser d'autres scripts
+```javascript
+// Utiliser d'autres scripts
 importScripts('cheminRelatif/script1.js', 'autreChemin/script2.js');
 ```
 
@@ -43,13 +43,13 @@ Fonctionne comme un singleton. Il peut etre partagé entre plusieurs contextes (
 3. Demarrage via linstruction `port.start()`
 4. Desctruction
 
-```
+```javascript
 // Main script
 var sheredWorker = new SharedWorker('worker.js');
 worker.postMessage('hello');
 ```
 
-```
+```javascript
 // Worker script
 this.addEventListener('message', function (e) {
     try {
